@@ -13,18 +13,18 @@
     <div class="brand"><div class="brand-mark">C</div><div><strong>CRM</strong><span>Sales workspace</span></div></div>
     <nav>
       <p class="nav-label">WORKSPACE</p>
-      <a class="nav-item active" href="#"><span>▦</span> Dashboard</a>
-      <a class="nav-item" href="#"><span>◉</span> Leads <b>128</b></a>
-      <a class="nav-item" href="#"><span>◎</span> Contacts</a>
-      <a class="nav-item" href="#"><span>◫</span> Deals</a>
-      <a class="nav-item" href="#"><span>✓</span> Tasks</a>
+      <a class="nav-item" href="index.html" data-page="dashboard"><span>▦</span> Dashboard</a>
+      <a class="nav-item" href="leads.html" data-page="leads"><span>◉</span> Leads <b>128</b></a>
+      <a class="nav-item" href="contacts.html" data-page="contacts"><span>◎</span> Contacts</a>
+      <a class="nav-item" href="deals.html" data-page="deals"><span>◫</span> Deals</a>
+      <a class="nav-item" href="tasks.html" data-page="tasks"><span>✓</span> Tasks</a>
       <p class="nav-label">ENGAGEMENT</p>
-      <a class="nav-item" href="#"><span>◌</span> Conversations <b class="dot">3</b></a>
-      <a class="nav-item" href="#"><span>✉</span> Emails</a>
-      <a class="nav-item" href="#"><span>⌁</span> Forms</a>
+      <a class="nav-item" href="conversations.html" data-page="conversations"><span>◌</span> Conversations <b class="dot">3</b></a>
+      <a class="nav-item" href="emails.html" data-page="emails"><span>✉</span> Emails</a>
+      <a class="nav-item" href="forms.html" data-page="forms"><span>⌁</span> Forms</a>
       <p class="nav-label">SYSTEM</p>
-      <a class="nav-item" href="#"><span>⌘</span> Integrations</a>
-      <a class="nav-item" href="#"><span>⚙</span> Settings</a>
+      <a class="nav-item" href="integrations.html" data-page="integrations"><span>⌘</span> Integrations</a>
+      <a class="nav-item" href="settings.html" data-page="settings"><span>⚙</span> Settings</a>
     </nav>
     <div class="sidebar-bottom">
       <div class="plan"><div class="plan-icon">✦</div><div><strong>Pro workspace</strong><small>2,840 / 10,000 leads</small></div></div>
@@ -37,7 +37,7 @@
       <button class="mobile-menu" onclick="toggleSidebar()">☰</button>
       <div class="search"><span>⌕</span><input placeholder="Search leads, contacts, deals..."><kbd>⌘ K</kbd></div>
       <div class="top-actions">
-        <button class="icon-btn" title="Notifications">♢<i></i></button>
+        <button class="icon-btn" title="Notifications">♢<i></i></button><button class="theme-btn" id="themeToggle" title="Toggle day/night mode">☾</button>
         <button class="icon-btn">?</button>
         <button class="create-btn" onclick="openModal()">＋ Add lead</button>
       </div>

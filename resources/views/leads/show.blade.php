@@ -1,0 +1,9 @@
+@extends('layouts.app')
+@section('title','Lead · '.trim($lead->first_name.' '.$lead->last_name))
+@section('content')
+<div class="row"><div><h1 style="margin:0">{{trim($lead->first_name.' '.$lead->last_name)}}</h1><p class="muted">{{$lead->title ?: 'Lead'}}</p></div><div><a class="btn secondary" href="{{route('leads.edit',$lead)}}">Edit</a> <a class="btn secondary" href="{{route('leads.index')}}">All Leads</a></div></div>
+<div class="grid" style="margin-top:18px"><div class="panel"><div class="muted">Status</div><h3>{{$lead->status?->name ?: '—'}}</h3></div><div class="panel"><div class="muted">Owner</div><h3>{{$lead->assignee?->name ?: 'Unassigned'}}</h3></div><div class="panel"><div class="muted">Value</div><h3>{{$lead->value !== null ? $lead->currency.' '.number_format((float)$lead->value,2) : '—'}}</h3></div></div>
+<div class="grid" style="margin-top:18px;grid-template-columns:1fr 1fr"><div class="panel"><h2>Lead details</h2><p><strong>Email:</strong> {{$lead->email ?: '—'}}</p><p><strong>Phone:</strong> {{$lead->phone ?: '—'}}</p><p><strong>Source:</strong> {{$lead->source?->name ?: '—'}}</p><p><strong>Created:</strong> {{$lead->created_at?->format('d M Y, h:i A')}}</p>
+<form method="POST" action="{{route('leads.destroy',$lead)}}" onsubmit="return confirm('Delete this lead? This cannot be undone.')">@csrf @method('DELETE')<button class="btn danger" type="submit">Delete Lead</button></form></div>
+<div class="panel"><h2>Activity</h2><div class="timeline">@forelse($lead->activities as $activity)<div class="activity"><strong>{{$activity->subject ?: $activity->type}}</strong><br><small>{{$activity->user?->name ?: 'System'}} · {{$activity->created_at?->format('d M Y, h:i A')}}</small>@if($activity->body)<div style="margin-top:6px;font-size:13px">{{$activity->body}}</div>@endif</div>@empty<p class="muted">No activity yet.</p>@endforelse</div></div></div>
+@endsection

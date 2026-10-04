@@ -67,6 +67,7 @@ class LeadController extends Controller
                 'subject' => 'Lead created',
                 'body' => 'Lead was added manually.',
                 'created_at' => now(),
+                'created_at' => now(),
             ]);
             return $lead;
         });
@@ -105,6 +106,7 @@ class LeadController extends Controller
                 'type' => $oldStatus != $lead->status_id ? 'status_changed' : 'updated',
                 'subject' => $oldStatus != $lead->status_id ? 'Lead status changed' : 'Lead updated',
                 'body' => null,
+                'created_at' => now(),
                 'created_at' => now(),
             ]);
         });

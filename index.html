@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111827">
+<title>CRM Dashboard</title>
+<link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-mark">C</div><div><strong>CRM</strong><span>Sales workspace</span></div></div>
+    <nav>
+      <p class="nav-label">WORKSPACE</p>
+      <a class="nav-item active" href="#"><span>▦</span> Dashboard</a>
+      <a class="nav-item" href="#"><span>◉</span> Leads <b>128</b></a>
+      <a class="nav-item" href="#"><span>◎</span> Contacts</a>
+      <a class="nav-item" href="#"><span>◫</span> Deals</a>
+      <a class="nav-item" href="#"><span>✓</span> Tasks</a>
+      <p class="nav-label">ENGAGEMENT</p>
+      <a class="nav-item" href="#"><span>◌</span> Conversations <b class="dot">3</b></a>
+      <a class="nav-item" href="#"><span>✉</span> Emails</a>
+      <a class="nav-item" href="#"><span>⌁</span> Forms</a>
+      <p class="nav-label">SYSTEM</p>
+      <a class="nav-item" href="#"><span>⌘</span> Integrations</a>
+      <a class="nav-item" href="#"><span>⚙</span> Settings</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="plan"><div class="plan-icon">✦</div><div><strong>Pro workspace</strong><small>2,840 / 10,000 leads</small></div></div>
+      <div class="profile"><div class="avatar">RY</div><div><strong>Ricky Yadav</strong><small>Administrator</small></div><span>⋮</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" onclick="toggleSidebar()">☰</button>
+      <div class="search"><span>⌕</span><input placeholder="Search leads, contacts, deals..."><kbd>⌘ K</kbd></div>
+      <div class="top-actions">
+        <button class="icon-btn" title="Notifications">♢<i></i></button>
+        <button class="icon-btn">?</button>
+        <button class="create-btn" onclick="openModal()">＋ Add lead</button>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="welcome-row">
+        <div><p class="eyebrow">MONDAY, OCTOBER 5</p><h1>Good morning, Ricky <span>👋</span></h1><p class="muted">Here’s what’s happening with your sales today.</p></div>
+        <div class="date-filter"><span>Last 30 days</span>⌄</div>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card"><div class="stat-head"><span>Total leads</span><span class="stat-icon purple">◉</span></div><strong>2,840</strong><div class="trend up">↗ 12.8% <span>vs last month</span></div></article>
+        <article class="stat-card"><div class="stat-head"><span>New leads</span><span class="stat-icon blue">✦</span></div><strong>384</strong><div class="trend up">↗ 8.4% <span>vs last month</span></div></article>
+        <article class="stat-card"><div class="stat-head"><span>Open deals</span><span class="stat-icon orange">◫</span></div><strong>₹18.6L</strong><div class="trend up">↗ 14.2% <span>pipeline value</span></div></article>
+        <article class="stat-card"><div class="stat-head"><span>Conversion rate</span><span class="stat-icon green">↗</span></div><strong>24.8%</strong><div class="trend up">↗ 3.6% <span>vs last month</span></div></article>
+      </div>
+
+      <div class="grid-main">
+        <section class="card performance">
+          <div class="card-head"><div><h2>Lead performance</h2><p>Lead volume and conversion over time</p></div><div class="segmented"><button class="selected">Leads</button><button>Won</button><button>Lost</button></div></div>
+          <div class="chart-wrap">
+            <div class="y-axis"><span>500</span><span>400</span><span>300</span><span>200</span><span>100</span><span>0</span></div>
+            <div class="chart"><div class="grid-lines"><i></i><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 760 250" preserveAspectRatio="none"><defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#6d5dfc" stop-opacity=".24"/><stop offset="1" stop-color="#6d5dfc" stop-opacity="0"/></linearGradient></defs><path class="area" d="M0 190 C45 180 55 145 105 160 S170 100 210 135 S270 105 315 125 S365 70 410 95 S465 145 505 112 S565 55 610 80 S675 45 760 60 L760 250 L0 250Z"/><path class="line" d="M0 190 C45 180 55 145 105 160 S170 100 210 135 S270 105 315 125 S365 70 410 95 S465 145 505 112 S565 55 610 80 S675 45 760 60"/></svg><div class="x-axis"><span>Sep 1</span><span>Sep 7</span><span>Sep 14</span><span>Sep 21</span><span>Sep 28</span><span>Oct 4</span></div></div>
+          </div>
+        </section>
+
+        <section class="card sources">
+          <div class="card-head"><div><h2>Lead sources</h2><p>Where your leads come from</p></div><button class="more">•••</button></div>
+          <div class="donut-area"><div class="donut"><div><strong>384</strong><small>This month</small></div></div><div class="legend"><span><i class="purple-dot"></i>Meta Ads <b>42%</b></span><span><i class="blue-dot"></i>Website <b>27%</b></span><span><i class="orange-dot"></i>Google Ads <b>18%</b></span><span><i class="gray-dot"></i>Other <b>13%</b></span></div></div>
+        </section>
+      </div>
+
+      <div class="grid-bottom">
+        <section class="card leads">
+          <div class="card-head"><div><h2>Recent leads</h2><p>Your latest incoming opportunities</p></div><a href="#">View all →</a></div>
+          <div class="table">
+            <div class="tr th"><span>LEAD</span><span>SOURCE</span><span>STATUS</span><span>OWNER</span><span>TIME</span></div>
+            <div class="tr"><span class="person"><i class="mini purple-bg">AS</i><b>Arjun Sharma<small>arjun@example.com</small></b></span><span>Meta Ads</span><span><em class="status new">New</em></span><span>Ricky</span><span>2 min ago</span></div>
+            <div class="tr"><span class="person"><i class="mini blue-bg">PM</i><b>Priya Mehta<small>priya@example.com</small></b></span><span>Website</span><span><em class="status contacted">Contacted</em></span><span>Rahul</span><span>18 min ago</span></div>
+            <div class="tr"><span class="person"><i class="mini orange-bg">VK</i><b>Vikram Kapoor<small>vikram@example.com</small></b></span><span>Google Ads</span><span><em class="status qualified">Qualified</em></span><span>Ricky</span><span>1 hr ago</span></div>
+            <div class="tr"><span class="person"><i class="mini green-bg">NP</i><b>Neha Patel<small>neha@example.com</small></b></span><span>Website</span><span><em class="status new">New</em></span><span>Simran</span><span>2 hrs ago</span></div>
+          </div>
+        </section>
+
+        <section class="card tasks">
+          <div class="card-head"><div><h2>My tasks</h2><p>What needs your attention</p></div><a href="#">View all →</a></div>
+          <div class="task"><span class="check"></span><div><b>Call Arjun Sharma</b><small>Follow up on pricing · Today, 3:00 PM</small></div><span class="priority high">High</span></div>
+          <div class="task"><span class="check"></span><div><b>Send proposal to Vikram</b><small>Deal follow-up · Today, 4:30 PM</small></div><span class="priority medium">Medium</span></div>
+          <div class="task"><span class="check"></span><div><b>Review new Meta leads</b><small>Lead assignment · Today, 6:00 PM</small></div><span class="priority low">Low</span></div>
+        </section>
+      </div>
+    </section>
+  </main>
+</div>
+<div class="modal" id="modal"><div class="modal-box"><button onclick="closeModal()">×</button><h2>Add a new lead</h2><p>Create a lead manually. Integrations will appear here later.</p><input placeholder="Full name"><input placeholder="Email"><input placeholder="Phone"><button class="save">Create lead</button></div></div>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

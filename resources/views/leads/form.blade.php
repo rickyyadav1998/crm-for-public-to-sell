@@ -1,0 +1,12 @@
+<div class="form-grid">
+<div class="field"><label>First name *</label><input class="input" name="first_name" value="{{old('first_name',$lead->first_name ?? '')}}" required>@error('first_name')<span class="error">{{$message}}</span>@enderror</div>
+<div class="field"><label>Last name</label><input class="input" name="last_name" value="{{old('last_name',$lead->last_name ?? '')}}">@error('last_name')<span class="error">{{$message}}</span>@enderror</div>
+<div class="field"><label>Email</label><input class="input" type="email" name="email" value="{{old('email',$lead->email ?? '')}}">@error('email')<span class="error">{{$message}}</span>@enderror</div>
+<div class="field"><label>Phone</label><input class="input" name="phone" value="{{old('phone',$lead->phone ?? '')}}"></div>
+<div class="field"><label>Lead title</label><input class="input" name="title" value="{{old('title',$lead->title ?? '')}}" placeholder="e.g. Website enquiry"></div>
+<div class="field"><label>Lead value</label><input class="input" type="number" min="0" step="0.01" name="value" value="{{old('value',$lead->value ?? '')}}"></div>
+<div class="field"><label>Currency</label><input class="input" name="currency" maxlength="3" value="{{old('currency',$lead->currency ?? 'INR')}}"></div>
+<div class="field"><label>Source</label><select class="select" name="source_id"><option value="">Select source</option>@foreach($sources as $source)<option value="{{$source->id}}" @selected((string)old('source_id',$lead->source_id ?? '')===(string)$source->id)>{{$source->name}}</option>@endforeach</select></div>
+<div class="field"><label>Status</label><select class="select" name="status_id"><option value="">Select status</option>@foreach($statuses as $status)<option value="{{$status->id}}" @selected((string)old('status_id',$lead->status_id ?? '')===(string)$status->id)>{{$status->name}}</option>@endforeach</select></div>
+<div class="field"><label>Assign to</label><select class="select" name="assigned_to"><option value="">Unassigned</option>@foreach($users as $user)<option value="{{$user->id}}" @selected((string)old('assigned_to',$lead->assigned_to ?? '')===(string)$user->id)>{{$user->name}}</option>@endforeach</select></div>
+</div>
